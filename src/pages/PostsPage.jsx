@@ -1,10 +1,10 @@
 // posts list
 import PostsList from '../components/PostsList';
 
-export default function PostsPage({ listPosts }) {
+export default function PostsPage() {
 
     return <>
         <h1>Posts List</h1>
-        <PostsList postsList={listPosts}/>
+        <PostsList />
     </>
 }

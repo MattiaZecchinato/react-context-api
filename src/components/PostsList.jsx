@@ -1,4 +1,9 @@
-export default function PostsList({ postsList }) {
+import { useContext } from "react"
+import PostsListContext from "../contexts/postsListContext"
+
+export default function PostsList() {
+
+    const { postsList } = useContext(PostsListContext);
 
     return <>
         {postsList.map(elem => {

@@ -1,6 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+// contexts
+import PostsListContext from "./contexts/postsListContext";
+
 //pages
 import PostsPage from './pages/PostsPage';
 
@@ -18,9 +21,9 @@ function App() {
   }, [])
 
   return (
-    <>
-      <PostsPage listPosts={postsList}/>
-    </>
+    <PostsListContext.Provider value={{postsList}}>
+      <PostsPage />
+    </PostsListContext.Provider>
   )
 }
 
