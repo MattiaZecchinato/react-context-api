@@ -1,17 +1,12 @@
 import { useContext } from "react"
 import PostsListContext from "../contexts/postsListContext"
+import PostCard from "./PostCard";
 
 export default function PostsList() {
 
     const { postsList } = useContext(PostsListContext);
 
     return <>
-        {postsList.map(elem => {
-
-        return <div key={elem.id}>
-                <h2>{elem.title}</h2>
-                <p>{elem.body}</p>
-            </div>
-        })}
+        {postsList.map(elem => <PostCard key={elem.id} body={elem.body} title={elem.title} />)}
     </>
 }
